@@ -40,6 +40,7 @@ router.get('/',function(req,res){
                 responseData.UserNo = rows[1][0]["UserNo"];
                 responseData.UserName = rows[1][0]["UserName"];
                 responseData.UserImg = rows[1][0]["UserImg"];
+                responseData.ISMerchants = rows[1][0]["MerchantsID"] == null ? false : true;
                 res.json(
                 responseData
                 )
