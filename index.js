@@ -10,7 +10,7 @@ app.use('/getHotShareInfo',require('./router/getHotShareInfo'));//获取热门�
 app.use('/getMyShareInfo',require('./router/getMyShareInfo'));//获取我的分享内容列表
 app.use('/delMyShareInfo',require('./router/delMyShareInfo'));//获取我的分享内容列表
 app.use('/addLinkInfo',require('./router/addLinkInfo'));//添加分享链接
-app.use('/getShareDetail',require('./router/getShareDetail'));//添加分享链接
+app.use('/getShareDetail',require('./router/getShareDetail'));//获取分享详情内容
 
 var httpServer = http.createServer(app);
 httpServer.listen(8017,function(){

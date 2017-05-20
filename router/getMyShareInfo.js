@@ -8,7 +8,7 @@ router.get('/',function(req,res){
         let UserNo = req.query.UserNo;
 
        //链接数据库，执行存储过程
-        let proc = "CALL PROC_GET_MY_SHOW_CONTENT(?,?)";//存储过程名称
+        let proc = "CALL PROC_GET_MY_SHOW_CONTENT(?)";//存储过程名称
         let params = [UserNo];//存储过程参数
         sql.query(proc, params, function (rows, fields) {
                 console.log(rows);
@@ -25,7 +25,7 @@ router.get('/',function(req,res){
                         list.ShowContentEnd = key["ShowContentEnd"];
                         shareList.push(list);
                 }
-                responseData.ShareHotList = shareList;
+                responseData.ShareMyList = shareList;
                 res.json(
                 responseData
                 )
