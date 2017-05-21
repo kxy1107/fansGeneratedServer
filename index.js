@@ -11,8 +11,9 @@ app.use('/getMyShareInfo',require('./router/getMyShareInfo'));//获取我的分�
 app.use('/delMyShareInfo',require('./router/delMyShareInfo'));//获取我的分享内容列表
 app.use('/addLinkInfo',require('./router/addLinkInfo'));//添加分享链接
 app.use('/getShareDetail',require('./router/getShareDetail'));//获取分享详情内容
+app.use('/getLinkRecord',require('./router/getLinkRecord'));//获取好友帮抢记录
 
 var httpServer = http.createServer(app);
-httpServer.listen(8017,function(){
+httpServer.listen(8027,function(){
  console.log("httpServer is OK");
 });

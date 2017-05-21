@@ -8,11 +8,11 @@ router.get('/',function(req,res){
         let ShowContentID = req.query.ShowContentID;
         let ShareUserNo = req.query.ShareUserNo;
         let ClickUserNo = req.query.ClickUserNo;
-        let Money = req.query.Money;
+        let Money = (Math.random()*0.1).toFixed(2);
 
        //链接数据库，执行存储过程
-        let proc = "CALL PROC_ADD_SHARE_LINK(?,?)";//存储过程名称
-        let params = [UserNo, Phone];//存储过程参数
+        let proc = "CALL PROC_ADD_SHARE_LINK(?,?,?,?)";//存储过程名称
+        let params = [ShowContentID,ShareUserNo,ClickUserNo,Money];//存储过程参数
         sql.query(proc, params, function (rows, fields) {
                 console.log(rows);
                 let responseData = {};
